@@ -1,0 +1,19 @@
+<!-- components/pokemon-filter/pokemon-filter.component.html -->
+<div class="filter-container">
+    <mat-form-field appearance="outline" class="filter-field">
+      <mat-label>Buscar Pokémon</mat-label>
+      <input 
+        matInput 
+        type="text" 
+        placeholder="Ej: pikachu, charmander..."
+        [ngModel]="filterValue()"
+        (ngModelChange)="onFilterChange($event)">
+      @if (filterValue()) {
+        <button matSuffix mat-icon-button (click)="clearFilter()">
+          <mat-icon>close</mat-icon>
+        </button>
+      } @else {
+        <mat-icon matSuffix>search</mat-icon>
+      }
+    </mat-form-field>
+  </div>

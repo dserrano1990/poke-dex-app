@@ -1,27 +1,85 @@
-# PokeDexApp
+## ✨ Características
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.17.
+- **Listado de Pokémon**: Visualización de Pokémon en formato de tarjetas con paginación
+- **Búsqueda en tiempo real**: Filtro dinámico para buscar Pokémon por nombre
+- **Detalle de Pokémon**: Vista detallada con información completa (tipos, habilidades, estadísticas)
+- **Traducción automática**: Tipos y habilidades traducidos al español
+- **Diseño responsive**: Adaptado para dispositivos móviles, tablets y escritorio
+- **Interfaz moderna**: Componentes de Angular Material con diseño atractivo
 
-## Development server
+## 🚀 Tecnologías
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Frontend
+- **Angular 17+** - Framework principal
+- **Angular Material** - Componentes UI
+- **RxJS** - Programación reactiva
+- **TypeScript** - Tipado estático
 
-## Code scaffolding
+### Herramientas de Desarrollo
+- **Karma** - Framework de pruebas
+- **Jasmine** - Framework de testing
+- **Angular CLI** - Herramientas de desarrollo
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Estructura del Proyecto
+src/
+├── app/
+│ ├── components/
+│ │ ├── pokemon-list/
+│ │ │ ├── pokemon-list.component.ts
+│ │ │ ├── pokemon-list.component.html
+│ │ │ ├── pokemon-list.component.scss
+│ │ │ └── pokemon-list.component.spec.ts
+│ │ ├── pokemon-detail/
+│ │ │ ├── pokemon-detail.component.ts
+│ │ │ ├── pokemon-detail.component.html
+│ │ │ ├── pokemon-detail.component.scss
+│ │ │ └── pokemon-detail.component.spec.ts
+│ │ └── pokemon-filter/
+│ │ ├── pokemon-filter.component.ts
+│ │ ├── pokemon-filter.component.html
+│ │ └── pokemon-filter.component.spec.ts
+│ ├── services/
+│ │ ├── pokemon.service.ts
+│ │ ├── pokemon-filter.service.ts
+│ │ └── pokemon-translation.service.ts
+│ ├── models/
+│ │ └── pokemon.ts
+│ └── app.config.ts
+├── assets/
+│ └── gif/
+│ └── loading.gif
+└── environments/
+├── environment.ts
+└── environment.prod.ts
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Requisitos Previos
 
-## Running unit tests
+- **Node.js** (v18 o superior)
+- **npm** (v9 o superior)
+- **Angular CLI** (v17 o superior)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Clonar el repositorio
+git clone https://github.com/tu-usuario/pokemon-app.git
+cd pokemon-app
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Instalar dependencias
+npm install
 
-## Further help
+## Ejecutar pruebas unitarias
+# Ejecutar todas las pruebas
+ng test
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# Ejecutar pruebas de un componente específico
+ng test --include='**/pokemon-list.component.spec.ts'
+ng test --include='**/pokemon-detail.component.spec.ts'
+ng test --include='**/pokemon-filter.component.spec.ts'
+
+# Ejecutar pruebas sin caché
+ng test --source-map=false --watch=false
+
+### Ejecución
+# Iniciar servidor de desarrollo
+ng serve
+Navegar a http://localhost:4200

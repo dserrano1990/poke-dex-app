@@ -1,0 +1,88 @@
+<div class="pokemon-card-container">
+    <div class="pokemon-card">
+        <!-- Botón cerrar -->
+        <button class="close-button" (click)="closeDialog()">
+            <mat-icon>close</mat-icon>
+        </button>
+
+        <!-- Header de la carta -->
+        <div class="card-header">
+            <div class="pokemon-id">#{{data.pokemon.id | number:'3.0-0'}}</div>
+            <div class="pokemon-name">{{data.pokemon.name | titlecase}}</div>
+            <div class="pokemon-hp">
+                <span class="hp-icon">❤️</span>
+                <span class="hp-value">{{data.pokemon.hp || 100}}</span>
+            </div>
+        </div>
+
+        <!-- Imagen del Pokémon -->
+        <div class="pokemon-image-container">
+            <div class="image-glow"></div>
+            <img class="pokemon-image" 
+                 [src]="data.pokemon.img" 
+                 [alt]="data.pokemon.name">
+        </div>
+
+        <!-- Tipos -->
+        <div class="types-container">
+            @for(type of data.pokemon.types; track type){
+                <span class="type-badge" [ngClass]="translateType(type)">
+                    {{type | titlecase}}
+                </span>
+            }
+        </div>
+
+        <!-- Stats principales -->
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-label">Altura</div>
+                <div class="stat-value">{{data.pokemon.height / 10}}<span class="stat-unit">m</span></div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <div class="stat-label">Peso</div>
+                <div class="stat-value">{{data.pokemon.weight / 10}}<span class="stat-unit">kg</span></div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <div class="stat-label">Experiencia</div>
+                <div class="stat-value">{{data.pokemon.base_experience || 100}}</div>
+            </div>
+        </div>
+
+        <!-- Habilidades -->
+        <div class="abilities-container">
+            <div class="section-title">
+                <span class="title-icon">⚡</span>
+                Habilidades
+            </div>
+            <div class="abilities-list">
+                @for(ability of data.pokemon.abilities; track ability){
+                    <div class="ability-item">
+                        <span class="ability-name">{{ability.name | titlecase}}</span>
+                        @if(ability.is_hidden){
+                            <span class="ability-hidden">(Oculta)</span>
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+
+        <!-- Descripción (opcional) -->
+        <!-- @if(data.pokemon.description){
+            <div class="description-container">
+                <div class="section-title">
+                    <span class="title-icon">📖</span>
+                    Descripción
+                </div>
+                <p class="description-text">{{data.pokemon.description}}</p>
+            </div>
+        } -->
+
+        <!-- Footer decorativo -->
+        <div class="card-footer">
+            <div class="footer-pattern"></div>
+            <div class="footer-text">Pokémon • {{data.pokemon.name}}</div>
+        </div>
+    </div>
+</div>

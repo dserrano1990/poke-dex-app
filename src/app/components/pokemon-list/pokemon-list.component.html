@@ -1,0 +1,64 @@
+@if(loading()){
+    <!-- <div class="loading-overlay">
+      <img src="../../assets/gif/loading.gif" class="loading-gif" />
+    </div> -->
+
+    <div class="loading-container">
+        <mat-spinner diameter="40"></mat-spinner>
+        <p>Cargando listado...</p>
+    </div>
+}
+@else{
+    <div class="pokemon-grid">
+        @for(pokemon of pokemonList(); track pokemon){
+            <mat-card class="pokemon-card" appearance="outlined" (click)="openPokemonDetail(pokemon)">
+                <mat-card-header>
+                  <div mat-card-avatar class="example-header-image"></div>
+                  <mat-card-title>{{pokemon.name}}</mat-card-title>
+                </mat-card-header>
+                <img mat-card-image src="{{pokemon.img}}" alt="Photo of a Shiba Inu">
+                <mat-card-content>
+                    <div class="badges-container mb-1">
+                        <div class="badge badge-primary">
+                            Altura: {{pokemon.height / 10}}m
+                        </div>
+                        <div class="badge badge-secondary">
+                            Peso: {{pokemon.weight / 10}}kg
+                        </div>
+                    </div>
+                    <div class="badge badge-secondary-fixed badgeStyle mb-1">
+                        Tipos: {{pokemon.typesFormat}}
+                    </div>
+                    <div class="badge badge-secondary-fixed badgeStyle mb-1">
+                        Habilidades: {{pokemon.abilitiesFormat}}
+                    </div>
+                </mat-card-content>
+                <!-- <mat-card-actions>
+                  <button matButton>LIKE</button>
+                  <button matButton>SHARE</button>
+                </mat-card-actions> -->
+            </mat-card>
+        }
+    </div>
+    <!-- pokemon-list.component.html -->
+    <div class="pagination-wrapper">
+        <button mat-icon-button [disabled]="currentPage() === 1 || loading()" (click)="previousPage()">
+            <mat-icon>navigate_before</mat-icon>
+        </button>
+        <mat-form-field appearance="outline">
+            <mat-select (selectionChange)="changePage($event)" [value]="currentPage()">
+                @for(page of pages(); track page){
+                    <mat-option [value]="page">
+                        pag. {{ page }}
+                    </mat-option>
+                }
+            </mat-select>
+        </mat-form-field>
+        <button [disabled]="currentPage() === pages().length || loading()" mat-icon-button (click)="nextPage()">
+            <mat-icon>navigate_next</mat-icon>
+        </button>
+    </div>
+}
+
+
+  

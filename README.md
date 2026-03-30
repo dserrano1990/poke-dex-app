@@ -68,18 +68,17 @@ cd pokemon-app
 npm install
 
 ## Ejecutar pruebas unitarias
-## Ejecutar todas las pruebas
+### Ejecutar todas las pruebas
 ng test
 
-## Ejecutar pruebas de un componente específico
+### Ejecutar pruebas de un componente específico
 ng test --include='**/pokemon-list.component.spec.ts'
 ng test --include='**/pokemon-detail.component.spec.ts'
 ng test --include='**/pokemon-filter.component.spec.ts'
 
-## Ejecutar pruebas sin caché
+### Ejecutar pruebas sin caché
 ng test --source-map=false --watch=false
 
 ### Ejecución
-## Iniciar servidor de desarrollo
 ng serve
 Navegar a http://localhost:4200

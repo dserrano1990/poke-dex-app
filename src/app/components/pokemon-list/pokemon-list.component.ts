@@ -74,7 +74,7 @@ export class PokemonListComponent implements OnInit {
     
     if (!filter) {
       this.pokemonList.set(this.filteredList());
-      console.log('pokemonList', this.pokemonList());
+      // console.log('pokemonList', this.pokemonList());
     } else {
       const filtered = allPokemon.filter(pokemon => 
         pokemon.name.toLowerCase().includes(filter)
@@ -127,10 +127,10 @@ export class PokemonListComponent implements OnInit {
         });
       }),
       tap((transformedPokemons) => {
-        // 👉 Guardas TODO
+        //Guardas TODO
         this.allPokemonList.set(transformedPokemons);
 
-        // 👉 Aquí recién filtras/paginas
+        //Aquí recién filtras/paginas
         this.pokemonList.set(this.filteredList());
 
         if (this.pages().length === 0) {
@@ -138,7 +138,7 @@ export class PokemonListComponent implements OnInit {
           const newArray = Array.from({ length: totalPages }, (_, i) => i + 1);
           this.pages.set(newArray);
         }
-        console.log(this.allPokemonList);
+        // console.log(this.allPokemonList);
         
         this.loading.set(false);
       })

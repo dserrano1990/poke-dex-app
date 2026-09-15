@@ -21,37 +21,38 @@
 - **Angular CLI** - Herramientas de desarrollo
 
 ## Estructura del Proyecto
+```text
 src/
 ├── app/
-│ ├── components/
-│ │ ├── pokemon-list/
-│ │ │ ├── pokemon-list.component.ts
-│ │ │ ├── pokemon-list.component.html
-│ │ │ ├── pokemon-list.component.scss
-│ │ │ └── pokemon-list.component.spec.ts
-│ │ ├── pokemon-detail/
-│ │ │ ├── pokemon-detail.component.ts
-│ │ │ ├── pokemon-detail.component.html
-│ │ │ ├── pokemon-detail.component.scss
-│ │ │ └── pokemon-detail.component.spec.ts
-│ │ └── pokemon-filter/
-│ │ ├── pokemon-filter.component.ts
-│ │ ├── pokemon-filter.component.html
-│ │ └── pokemon-filter.component.spec.ts
-│ ├── services/
-│ │ ├── pokemon.service.ts
-│ │ ├── pokemon-filter.service.ts
-│ │ └── pokemon-translation.service.ts
-│ ├── models/
-│ │ └── pokemon.ts
-│ └── app.config.ts
+│   ├── components/
+│   │   ├── pokemon-list/
+│   │   │   ├── pokemon-list.component.ts
+│   │   │   ├── pokemon-list.component.html
+│   │   │   ├── pokemon-list.component.scss
+│   │   │   └── pokemon-list.component.spec.ts
+│   │   ├── pokemon-detail/
+│   │   │   ├── pokemon-detail.component.ts
+│   │   │   ├── pokemon-detail.component.html
+│   │   │   ├── pokemon-detail.component.scss
+│   │   │   └── pokemon-detail.component.spec.ts
+│   │   └── pokemon-filter/
+│   │       ├── pokemon-filter.component.ts
+│   │       ├── pokemon-filter.component.html
+│   │       └── pokemon-filter.component.spec.ts
+│   ├── services/
+│   │   ├── pokemon.service.ts
+│   │   ├── pokemon-filter.service.ts
+│   │   └── pokemon-translation.service.ts
+│   ├── models/
+│   │   └── pokemon.ts
+│   └── app.config.ts
 ├── assets/
-│ └── gif/
-│ └── loading.gif
+│   └── gif/
+│       └── loading.gif
 └── environments/
-├── environment.ts
-└── environment.prod.ts
-
+    ├── environment.ts
+    └── environment.prod.ts
+```
 
 ## Requisitos Previos
 
